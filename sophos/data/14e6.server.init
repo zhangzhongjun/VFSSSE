@@ -1,0 +1,9 @@
+./server: /usr/local/lib/libcrypto.so.1.0.0: no version information available (required by /root/exp/DistSSE/sophos/third_party/crypto/library/lib/libsse_crypto.so)
+[INFO] - Synchronous searches
+[INFO] - Running client with database 14e6.ssdb
+I0829 00:25:14.470675758   15550 server_builder.cc:262]      Synchronous server. Num CQs: 4, Min pollers: 1, Max Pollers: 2, CQ timeout (msec): 10000
+[INFO] - Server listening on 0.0.0.0:4242
+[INFO] - [INFO] - Seting up with size 11000000
+[INFO] - 
+Exiting ... 
+[INFO] - Done
