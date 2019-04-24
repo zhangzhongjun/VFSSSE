@@ -116,7 +116,10 @@ namespace DistSSE {
         }
 
         std::string get_search_time(std::string w) {
-            std::string search_time = Util::hex2str("0000000000000000000000000000000000000000000000000000000000000000");
+            //std::string search_time = Util::hex2str("0000000000000000000000000000000000000000000000000000000000000000");
+            int ind_len = AES::BLOCKSIZE / 2; // AES::BLOCKSIZE = 16
+            byte tmp[ind_len]={0};
+            std::string search_time = /*Util.str2hex*/(std::string((const char *) tmp, ind_len));
             std::map<std::string, std::string>::iterator it;
             it = sc_mapper.find(w);
             if (it != sc_mapper.end()) {
@@ -342,12 +345,74 @@ namespace DistSSE {
             // 读取返回列表
             int counter = 0;
             SearchReply reply;
+            std::unordered_set <std::string> result;
             while (reader->Read(&reply)) {
                 logger::log(logger::INFO) << reply.ind()<<std::endl;
                 counter++;
+                result.insert(Util::str2hex(reply.ind()));
             }
             logger::log(logger::INFO) << " search result: "<< counter << std::endl;
+            logger::log(logger::INFO) << " search set result: "<< result.size() << std::endl;
             return "OK";
+        }
+
+        std::string search2(const std::string w) {
+            logger::log(logger::INFO) << "client search(const std::string w):  " << std::endl;
+            std::string tw;
+            size_t uc;
+            gen_search_token(w, tw, uc);
+            std::unordered_set<std::string> result = search2(tw, uc);
+
+            struct timeval t1, t2;
+            gettimeofday(&t1, NULL);
+            verify(w, result);
+            gettimeofday(&t2, NULL);
+            double verify_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() <<  " verify time (ms): "<< verify_time <<std::endl;
+            logger::log(logger::INFO) << " verify time (ms): "<< verify_time << std::endl;
+            // update `sc` and `uc`
+            //increase_search_time(w);
+            //set_update_time(w, 0);
+            return "OK";
+        }
+
+
+        std::unordered_set<std::string> search2( const std::string tw, int uc) {
+            // request包含 enc_token 和 st
+            SearchRequestMessage request;
+            //request.set_kw(kw);
+            request.set_tw(tw);
+            request.set_uc(uc);
+            // Context for the client. It could be used to convey extra information to the server and/or tweak certain RPC behaviors.
+            ClientContext context;
+            // 执行RPC操作，返回类型为 std::unique_ptr<ClientReaderInterface<SearchReply>>
+            std::unique_ptr <ClientReaderInterface<SearchReply>> reader = stub_->search(&context, request);
+            // 读取返回列表
+            int counter = 0;
+            SearchReply reply;
+            std::unordered_set <std::string> result;
+            while (reader->Read(&reply)) {
+                logger::log(logger::INFO) << reply.ind()<<std::endl;
+                counter++;
+                result.insert(Util::str2hex(reply.ind()));
+            }
+            logger::log(logger::INFO) << " search result: "<< counter << std::endl;
+            logger::log(logger::INFO) << " search set result: "<< result.size() << std::endl;
+            return result;
+        }
+
+        void verify(const std::string w, std::unordered_set <std::string> result){
+            int ind_len = AES::BLOCKSIZE / 2; // AES::BLOCKSIZE = 16
+            byte tmp[ind_len] = {0};
+            std::string Hw = /*Util.str2hex*/(std::string((const char *) tmp, ind_len));
+            //std::string((const char *) tmp, ind_len);
+            //std::cout << tmp << std::endl;
+            for (std::unordered_set<std::string>::iterator i = result.begin(); i != result.end(); i++) {
+                Hw = Util::Xor(Hw, *i);
+            }
+            logger::log(logger::INFO) << " H "<< Hw<< std::endl;
+            std::string proof = get_search_time(w);
+            logger::log(logger::INFO) << " proof "<< proof<< std::endl;
         }
 
 //        Status update(UpdateRequestMessage update) {

@@ -15,6 +15,9 @@
 
 # 查询
 ./rpc_client /tmp/my.cdb 3
+
+#
+./rpc_client /tmp/my.cdb 4
 ```
 
 # 正式测试
@@ -36,11 +39,20 @@
 ## Search
 ```bash
 # 数据库的路径、实体数、关键词、flag、线程数
-./rpc_client /tmp/my.db 4 keyword_10e1 3 1 benchmark_client_10e1.out
-./rpc_client /tmp/my.db 4 keyword_10e2 3 1 benchmark_client_10e2.out
-./rpc_client /tmp/my.db 4 keyword_10e3 3 1 benchmark_client_10e3.out
-./rpc_client /tmp/my.db 4 keyword_10e4 3 1 benchmark_client_10e4.out
-./rpc_client /tmp/my.db 4 keyword_10e5 3 1 benchmark_client_10e5.out
+./rpc_client /tmp/my.cdb 4 keyword_10e1 3 1 benchmark_client_10e1.search.out
+./rpc_client /tmp/my.cdb 4 keyword_10e2 3 1 benchmark_client_10e2.search.out
+./rpc_client /tmp/my.cdb 4 keyword_10e3 3 1 benchmark_client_10e3.search.out
+./rpc_client /tmp/my.cdb 4 keyword_10e4 3 1 benchmark_client_10e4.search.out
+./rpc_client /tmp/my.cdb 4 keyword_10e5 3 1 benchmark_client_10e5.search.out
+```
+
+## Verify
+```bash
+./rpc_client /tmp/my.cdb 10 keyword_10e1 4 1 benchmark_client_10e1.verify.out
+./rpc_client /tmp/my.cdb 100 keyword_10e2 4 1 benchmark_client_10e2.verify.out
+./rpc_client /tmp/my.cdb 1000 keyword_10e3 4 1 benchmark_client_10e3.verify.out
+./rpc_client /tmp/my.cdb 10000 keyword_10e4 4 1 benchmark_client_10e4.verify.out
+./rpc_client /tmp/my.cdb 100000 keyword_10e5 4 1 benchmark_client_10e5.verify.out
 ```
 
 # 核心代码

@@ -23,89 +23,79 @@
     <favorites_list name="DistSSE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/client_main.cpp">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/verify_batch.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="85" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/benchmark_client_10e5.update.out、">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sophos/benchmark_server.out">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/verify_out.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="1230" selection-start-line="1230" selection-end-line="1230" selection-end-column="28" />
+            <state relative-caret-position="75">
+              <caret line="5" column="92" lean-forward="true" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/src/aux/db_generator.cpp">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/update_batch.sh">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/update_out.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2113">
-              <caret line="307" column="16" selection-start-line="307" selection-start-column="16" selection-end-line="307" selection-end-column="16" />
+            <state>
+              <caret selection-end-line="5" selection-end-column="92" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/src/sophos_client_runner.cpp">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/rpc_client.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+            <state relative-caret-position="60">
+              <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="71" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.cpp">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.client.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="596" column="19" selection-start-line="596" selection-start-column="19" selection-end-line="596" selection-end-column="19" />
+            <state relative-caret-position="76">
+              <caret line="370" column="75" selection-start-line="370" selection-start-column="75" selection-end-line="370" selection-end-column="75" />
+              <folding>
+                <element signature="e#2716#3429#0" />
+                <element signature="e#3438#3697#0" />
+                <element signature="e#3707#3925#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.hpp">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="85" column="42" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="42" />
+            <state relative-caret-position="75">
+              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/bench_1e5.sh">
+        <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/search_batch.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="85" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/bench_test.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sophos/scripts/test.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="225">
+              <caret line="15" column="4" selection-end-line="15" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -114,7 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trace_evl</find>
       <find>search_with_counter</find>
       <find>reset</find>
       <find>n_keywords</find>
@@ -138,6 +127,13 @@
       <find>gendb</find>
       <find>gen_db_with_trace</find>
       <find>rnd_entries_count</find>
+      <find>Xor</find>
+      <find>byte tmp[ind_len];</find>
+      <find>Util</find>
+      <find>get_sear</find>
+      <find>time</find>
+      <find>verify</find>
+      <find>logger</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/sophos</dir>
@@ -154,13 +150,19 @@
         <option value="$PROJECT_DIR$/sophos/scripts/test.sh" />
         <option value="$PROJECT_DIR$/sophos/bench_1e5.sh" />
         <option value="$PROJECT_DIR$/sophos/bench_test.sh" />
+        <option value="$PROJECT_DIR$/zhangscheme/scripts/runserver.sh" />
+        <option value="$PROJECT_DIR$/zhangscheme/scripts/verify_batch.sh" />
+        <option value="$PROJECT_DIR$/zhangscheme/rpc_client.cc" />
+        <option value="$PROJECT_DIR$/zhangscheme/DistSSE.client.h" />
+        <option value="$PROJECT_DIR$/zhangscheme/README.md" />
+        <option value="$PROJECT_DIR$/zhangscheme/scripts/verify_out.sh" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="612" />
-    <option name="y" value="287" />
-    <option name="width" value="1435" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="52" />
+    <option name="y" value="519" />
+    <option name="width" value="1863" />
     <option name="height" value="775" />
   </component>
   <component name="ProjectView">
@@ -172,25 +174,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="DistSSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistSSE" type="462c0819:PsiDirectoryNode" />
+              <item name="MyPaper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DistSSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistSSE" type="462c0819:PsiDirectoryNode" />
-              <item name="sophos" type="462c0819:PsiDirectoryNode" />
+              <item name="MyPaper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaper" type="462c0819:PsiDirectoryNode" />
+              <item name="zhangscheme" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="DistSSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistSSE" type="462c0819:PsiDirectoryNode" />
-              <item name="sophos" type="462c0819:PsiDirectoryNode" />
+              <item name="MyPaper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyPaper" type="462c0819:PsiDirectoryNode" />
+              <item name="zhangscheme" type="462c0819:PsiDirectoryNode" />
               <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DistSSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DistSSE" type="462c0819:PsiDirectoryNode" />
-              <item name="sophos" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -201,13 +197,15 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/sophos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zhangscheme/scripts" />
+    <property name="settings.editor.selected.configurable" value="Console" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/sophos" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zhangscheme/scripts" />
       <recent name="$PROJECT_DIR$/sophos" />
     </key>
   </component>
@@ -223,27 +221,35 @@
       </list>
     </option>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="52" y="519" width="1863" height="775" extended-state="0" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.46336207" side_tool="true" visible="true" weight="0.17432208" />
-      <window_info id="Favorites" order="1" sideWeight="0.5005917" side_tool="true" weight="0.24982001" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.5366379" visible="true" weight="0.17432208" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7222222" visible="true" weight="0.21849202" />
+      <window_info id="Structure" order="1" sideWeight="0.2777778" side_tool="true" visible="true" weight="0.21849202" />
+      <window_info id="Favorites" order="2" sideWeight="0.5005917" side_tool="true" weight="0.24982001" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.4722222" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -354,38 +360,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.hpp">
+    <entry file="file://$PROJECT_DIR$/sophos/client_main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="85" column="42" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="42" />
+        <state relative-caret-position="1860">
+          <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="596" column="19" selection-start-line="596" selection-start-column="19" selection-end-line="596" selection-end-column="19" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/sophos/benchmark_client_10e5.update.out、">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/scripts/test.sh">
+    <entry file="file://$PROJECT_DIR$/sophos/src/aux/db_generator.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/bench_1e5.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="85" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/bench_test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="4605">
+          <caret line="307" column="16" selection-start-line="307" selection-start-column="16" selection-end-line="307" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -396,27 +384,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/src/aux/db_generator.cpp">
+    <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2113">
-          <caret line="307" column="16" selection-start-line="307" selection-start-column="16" selection-end-line="307" selection-end-column="16" />
+        <state relative-caret-position="8940">
+          <caret line="596" column="19" selection-start-line="596" selection-start-column="19" selection-end-line="596" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/client_main.cpp">
+    <entry file="file://$PROJECT_DIR$/sophos/src/sophos_core.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="124" column="8" lean-forward="true" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
+        <state relative-caret-position="1275">
+          <caret line="85" column="42" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos/benchmark_client_10e5.update.out、">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/sophos/bench_1e5.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="85" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos/bench_test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos/scripts/test.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sophos/benchmark_server.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.Util.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="1230" selection-start-line="1230" selection-end-line="1230" selection-end-column="28" />
+        <state relative-caret-position="330">
+          <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.Util.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.db_generator.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="268" column="40" selection-start-line="268" selection-start-column="40" selection-end-line="268" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/基本语法.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-185" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="415" selection-start-line="415" selection-end-line="419" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast/scripts/runserver.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos/scripts/runserver.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast/scripts/clear.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/runserver.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/search_batch.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/DistSSE.client.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="370" column="75" selection-start-line="370" selection-start-column="75" selection-end-line="370" selection-end-column="75" />
+          <folding>
+            <element signature="e#2716#3429#0" />
+            <element signature="e#3438#3697#0" />
+            <element signature="e#3707#3925#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/verify_batch.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="14" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/rpc_client.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/update_batch.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/update_out.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme/scripts/verify_out.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="92" lean-forward="true" selection-start-line="5" selection-start-column="92" selection-end-line="5" selection-end-column="92" />
         </state>
       </provider>
     </entry>
