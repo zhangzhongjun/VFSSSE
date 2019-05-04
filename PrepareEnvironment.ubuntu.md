@@ -1,7 +1,8 @@
 # RocksDB
 
-> 官方文档：https://github.com/facebook/rocksdb/blob/257b458121b7c684f432838ca0e45c1500744c89/INSTALL.md
-> 平台：ubuntu desktop 18.04
+> document：https://github.com/facebook/rocksdb/blob/257b458121b7c684f432838ca0e45c1500744c89/INSTALL.md
+>
+> platform：ubuntu desktop 18.04
 
 Upgrade your gcc to version at least 4.8 to get C++11 support.
 
@@ -16,7 +17,7 @@ gcc --version
 g++ --version
 ```
 
-上面的方式将会下载gcc4.8和g++4.8，使用如下方式一键下载编译所需环境，下载为gcc7.3和g++7.3
+we can get gcc7.3 and g++7.3 directly in following way
 
 ```bash
 sudo apt-get install build-essential autoconf libtool pkg-config
@@ -62,9 +63,9 @@ sudo apt-get install -y libzstd-dev
 # RocksDB
 git clone https://github.com/facebook/rocksdb.git
 cd rocksdb
-# 获得librocksdb.a
+# get librocksdb.a
 make static_lib
-# 获得librocksdb.so
+# get librocksdb.so
 make shared_lib
 cp -r ./include/rocksdb /usr/include
 cp librocksdb.so.5.18.0 /usr/lib
@@ -86,17 +87,17 @@ make install
 
 # grpc
 
-> 官方文档：https://github.com/grpc/grpc/blob/master/BUILDING.md
-> 平台：ubuntu desktop 18.04
+> document：https://github.com/grpc/grpc/blob/master/BUILDING.md
+> platform：ubuntu desktop 18.04
 
 
-## 安装build essential
+## install build essential
 
 ```bash
 sudo apt-get install build-essential autoconf libtool pkg-config
 ```
 
-##  编译
+##  compile
 
 ```bash
 git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
@@ -104,7 +105,7 @@ cd grpc
 git submodule update --init
 ```
 
-如果上面一条指令发生错误，则
+if there are any errors, then
 
 ```bash
 # vi .gitmodules
@@ -121,30 +122,31 @@ git submodule update --init
 # make install
 ```
 
-## 安装protobuf
+## install protobuf
 
 ```bash
 # cd third_party/protobuf
 # make && sudo make install
 ```
 
-## 配置环境变量
+## Set environment
 
-首先确认pkgconfig的位置，我的电脑是`usr/local/lib/pkgconfig`
+make sure where `pkgconfig` is on your computer, mine is `usr/local/lib/pkgconfig`
 
 ```bash
 # export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 ```
 
-添加动态库的位置，否则找不到`libgrpc++.so.1`等动态库的位置
+set the path of library, otherwise we cannot find where `libgrpc++.so.1` is
+
 
 ```bash
 # vi /etc/ld.so.conf.d/grpc.conf
-# 添加一行 "/usr/local/lib"
+# add "/usr/local/lib"
 # ldconfig
 ```
 
-## 运行示例程序
+## run the example project
 
 ```bash
 cd grpc/examples/cpp/helloworld

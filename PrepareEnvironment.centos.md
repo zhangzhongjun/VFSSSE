@@ -1,7 +1,8 @@
 # RocksDB
 
 > https://github.com/facebook/rocksdb
-> 平台：centos 7
+>
+> Platform：centos 7
 
 ```bash
 # gflags
@@ -35,9 +36,9 @@ make && sudo make install
 # RocksDB
 git clone https://github.com/facebook/rocksdb.git
 cd rocksdb
-# 获得librocksdb.a
+# get librocksdb.a
 make static_lib
-# 获得librocksdb.so
+# get librocksdb.so
 make shared_lib
 cp -r ./include/rocksdb /usr/include
 cp librocksdb.so.5.18.0 /usr/lib
@@ -59,11 +60,10 @@ make install
 
 # grpc
 
-如果是ubuntu，则参考官方文档会顺利的安装完成
-> 平台：下面给出centos系统的安装步骤
+> platform：centos 7
 
 
-## 安装build essential
+## build essential
 
 ```bash
 yum groups mark install "Development Tools"
@@ -71,25 +71,25 @@ yum groups mark convert "Development Tools"
 yum groupinstall "Development Tools"
 ```
 
-## 安装cmake
+## cmake
 
 ```bash
 yum install -y cmake
 ```
 
-## 安装autoconf
+## autoconf
 
 ```bash
 yum install -y autoconf
 ```
 
-## 安装libtool
+## libtool
 
 ```bash
 yum install -y libtool
 ```
 
-##  编译
+##  Compile
 
 ```bash
 git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
@@ -97,7 +97,8 @@ cd grpc
 git submodule update --init
 ```
 
-如果上面一条指令发生错误，则
+if there is some error occurs, then
+
 
 ```bash
 # vi .gitmodules
@@ -114,30 +115,31 @@ git submodule update --init
 # make install
 ```
 
-## 安装protobuf
+## protobuf
 
 ```bash
 # cd third_party/protobuf
 # make && sudo make install
 ```
 
-## 配置环境变量
+## Set environment
 
-首先确认pkgconfig的位置，我的电脑是`usr/local/lib/pkgconfig`
+make sure where `pkgconfig` is on your computer, mine is `usr/local/lib/pkgconfig`
 
 ```bash
 # export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 ```
 
-添加动态库的位置，否则找不到`libgrpc++.so.1`等动态库的位置
+set the path of library, otherwise we cannot find where `libgrpc++.so.1` is
+
 
 ```bash
 # vi /etc/ld.so.conf.d/grpc.conf
-# 添加一行 "/usr/local/lib"
+# add the line "/usr/local/lib"
 # ldconfig
 ```
 
-## 运行示例程序
+## run the example project
 
 ```bash
 cd grpc/examples/cpp/helloworld

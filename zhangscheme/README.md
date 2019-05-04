@@ -1,35 +1,45 @@
-# 功能测试
-## 服务器
+# build
+
 ```bash
-# 数据库的路径 缓存数据的路径 线程数
+make clean
+make
+```
+
+# functions test
+
+## server
+ 
+```bash
+# path of database, path of cache dadabase, number of threads, path of output log
 ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 
-## 客户端
+## client
 ```bash
-# 更新1个keyword-filename对
+# insert one keyword-filename pair
 ./rpc_client /tmp/my.cdb 1
 
-# 更新3个keyword-filename对
+# insert three keyword-docuemnt pairs
 ./rpc_client /tmp/my.cdb 2
 
-# 查询
+# search `keyword`
 ./rpc_client /tmp/my.cdb 3
 
-#
+# search and verify `keyword`
 ./rpc_client /tmp/my.cdb 4
 ```
 
-# 正式测试
+# benchmark
 
-## 服务器端
+## server
+
 ```bash
-# 数据库的路径 缓存数据的路径 线程数
+# path of database, path of cache dadabase, number of threads, path of output log
 ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 ## Update
 ```bash
-# 数据库的路径、实体数、关键词、flag、线程数
+# path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 10 keyword_10e1 2 1 benchmark_client_10e1.update.out
 ./rpc_client /tmp/my.cdb 100 keyword_10e2 2 1 benchmark_client_10e2.update.out
 ./rpc_client /tmp/my.cdb 1000 keyword_10e3 2 1 benchmark_client_10e3.update.out
@@ -38,7 +48,7 @@
 ```
 ## Search
 ```bash
-# 数据库的路径、实体数、关键词、flag、线程数
+# path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 4 keyword_10e1 3 1 benchmark_client_10e1.search.out
 ./rpc_client /tmp/my.cdb 4 keyword_10e2 3 1 benchmark_client_10e2.search.out
 ./rpc_client /tmp/my.cdb 4 keyword_10e3 3 1 benchmark_client_10e3.search.out
@@ -48,6 +58,7 @@
 
 ## Verify
 ```bash
+# path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 10 keyword_10e1 4 1 benchmark_client_10e1.verify.out
 ./rpc_client /tmp/my.cdb 100 keyword_10e2 4 1 benchmark_client_10e2.verify.out
 ./rpc_client /tmp/my.cdb 1000 keyword_10e3 4 1 benchmark_client_10e3.verify.out
@@ -55,7 +66,8 @@
 ./rpc_client /tmp/my.cdb 100000 keyword_10e5 4 1 benchmark_client_10e5.verify.out
 ```
 
-# 核心代码
+# core code
+
 ```cplusplus
 gen_update_token(){
     sc = get_search_time(w);
@@ -82,16 +94,31 @@ search() {
 }
 ```
 
-# 使用脚本
+# use scripts
 
-测试update的时间
+## Update
+
 ```bash
+sh ./scripts/clear.sh
+sh ./scripts/runserver.sh
 sh ./scripts/update_batch.sh
+# see output
 sh ./scripts/update_out.sh
 ```
 
-测试search的时间
+## Search
+
 ```bash
+sh ./scripts/clear.sh
+sh ./scripts/runserver.sh
 sh ./scripts/search_batch.sh
+# see output
 sh ./scripts/search_out.sh
+```
+
+## Verify
+
+```bash
+sh ./scripts/verify_batch.sh
+sh ./scripts/verify_out.sh
 ```

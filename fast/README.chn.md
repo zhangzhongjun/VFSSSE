@@ -1,35 +1,36 @@
-# functions test
+# 作者的简化
 
-## server
+![1](imgs/1.jpg)
+
+# 功能测试
+## 服务器
 ```bash
-# path of database, path of cache dadabase, number of threads, path of output log
+# 数据库的路径 缓存数据的路径 线程数
 ./rpc_server /tmp/fast.sdb /tmp/fast.scadb 1 benchmark_server.out
 ```
-## client
+## 客户端
 ```bash
-# insert one keyword-filename pair
+# 更新1个keyword-filename对
 ./rpc_client /tmp/fast.cdb 1
 
-# insert three keyword-docuemnt pairs
+# 更新3个keyword-filename对
 ./rpc_client /tmp/fast.cdb 2
 
-# search `keyword`
+# 查询
 ./rpc_client /tmp/fast.cdb 3
 ```
 
-# generate random database
+# 产生随机数据库
 
-insert directly to database, no RPC latency included
-
+直接插入数据库中，不包含RPC通信延迟
 ```bash
-# path of database, number of keyword-filename pairs
-./random_db /tmp/random.sdb 100
+./random_db /etc/random.sdb 100
 ```
 
-# benchmark
+# 正式测试
 ## Update
 ```bash
-# path of database, number of entries, keyword, flag, number of threads, path of logfile
+# 数据库的路径、实体数、关键词、flag、线程数
 ./rpc_client /tmp/fast.cdb 100 keyword_10e2 2 1 benchmark_client_10e2.update.out
 ./rpc_client /tmp/fast.cdb 1000 keyword_10e3 2 1 benchmark_client_10e3.update.out
 ./rpc_client /tmp/fast.cdb 10000 keyword_10e4 2 1 benchmark_client_10e4.update.out
@@ -37,14 +38,13 @@ insert directly to database, no RPC latency included
 ```
 ## Search
 ```bash
-# path of database, number of entries, keyword, flag, number of threads, path of logfile
+# 数据库的路径、实体数、关键词、flag、线程数
 ./rpc_client /tmp/cdb.db 4 keyword_10e2 3 1 benchmark_client_10e2.search.out
 ./rpc_client /tmp/cdb.db 4 keyword_10e3 3 1 benchmark_client_10e3.search.out
 ./rpc_client /tmp/cdb.db 4 keyword_10e4 3 1 benchmark_client_10e4.search.out
 ./rpc_client /tmp/cdb.db 4 keyword_10e5 3 1 benchmark_client_10e5.search.out
 ```
-
-# core code
+# 核心代码
 ```cplusplus
 gen_update_token(){
     uc = get_update_time(w);
@@ -58,20 +58,16 @@ gen_search_token(){
     kw = gen_enc_token(tw+uc);
 }
 ```
+# 使用脚本
 
-# use scripts
-## Update
+测试update的时间
 ```bash
-sh ./scripts/clear.sh
-sh ./scripts/runserver.sh
 sh ./scripts/update_batch.sh
 sh ./scripts/update_out.sh
 ```
 
-## Search
+测试search的时间
 ```bash
-sh ./scripts/clear.sh
-sh ./scripts/runserver.sh
 sh ./scripts/search_batch.sh
 sh ./scripts/search_out.sh
 ```

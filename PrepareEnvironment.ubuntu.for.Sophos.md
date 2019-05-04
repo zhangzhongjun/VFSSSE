@@ -1,4 +1,4 @@
-# 环境
+# Environment
 
 ```bash
 sudo apt-get install -y build-essential autoconf libtool pkg-config
@@ -6,15 +6,15 @@ sudo apt-get install -y yasm openssl scons libssl-dev
 sudo apt-get install -y libboost-dev
 ```
 
-# 获得代码
+# get the code
 
-获得主代码
+get the main code
 
 ```bash
  git clone https://gitlab.com/sse/sophos.git
 ```
 
-获得第三方代码
+get the third-party code
 
 ```bash
 git submodule update --init
@@ -42,21 +42,27 @@ Then, to build Sophos itself, just enter in your terminal
 $ scons 
 ```
 
-# 问题1
+# issue 1
 
-libssl-dev版本过高问题：bost的方案中使用的版本为1.0.0；如果你安装的是1.1.0版本的，则会出现找不到AES_CTR加密函数的问题
+the version of libssl-dev too high： in bost, the version of libssl-dev is 1.0.0；is yours is 1.1.0，then there will have error `can not find the function AES_CTR`
 
-您可以使用以下列表中的任何一个源镜像只要往您的 /etc/apt/sources.list 文件中像下面这样添加一行：
+the solution is that install libssl1.0-dev by aptitude
+
+firstly add the follow line to `/etc/apt/sources.list`
+
 ```bash
 deb http://security.debian.org/debian-security jessie/updates main 
 ```
 
-然后
+then
+
 ```bash
 aptitude update
 aptitude install libssl1.0-dev
 ```
 
-# 问题2
+# issue 2
 
-rocksdb的options问题：bost的方案中使用的rocksdb版本较低，有不支持的options，把报错的位置注释即可
+the version of rocksdb too high: in bost, the version of bost is too low, so he use some options which are no longer supported
+
+we just need to comment the error line in his code
