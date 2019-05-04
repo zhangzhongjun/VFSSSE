@@ -119,6 +119,9 @@ sh ./scripts/search_out.sh
 ## Verify
 
 ```bash
+sh ./scripts/clear.sh
+sh ./scripts/runserver.sh
 sh ./scripts/verify_batch.sh
+# see output
 sh ./scripts/verify_out.sh
 ```
