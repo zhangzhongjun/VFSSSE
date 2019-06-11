@@ -1,5 +1,11 @@
-# FAST/FASTIO
-Implementation of verifiable forward secure SSE scheme
+# VFSSSE
+
+Implementation of Verifiable Forward Secure SSE scheme
+
+fast: the implementation of the scheme proposed in "Forward Private Searchable Symmetric Encryption with Optimized IO Efficiency"
+
+sophos: 
+
 
 # Pre-requisites
 C++11, Crypto++, RocksDB and gRPC
