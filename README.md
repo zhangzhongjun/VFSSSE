@@ -2,9 +2,13 @@
 
 Implementation of Verifiable Forward Secure SSE scheme
 
-fast: the implementation of the scheme proposed in "Forward Private Searchable Symmetric Encryption with Optimized IO Efficiency"
+fast: implementation of the scheme proposed in "Forward Private Searchable Symmetric Encryption with Optimized IO Efficiency"
 
-sophos: 
+sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption"
+
+sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption", it is a verifiable version of sophos
+
+zhangscheme: our scheme 
 
 
 # Pre-requisites
