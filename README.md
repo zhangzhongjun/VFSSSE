@@ -2,13 +2,10 @@
 
 Implementation of Verifiable Forward Secure SSE scheme
 
-fast: implementation of the scheme proposed in "Forward Private Searchable Symmetric Encryption with Optimized IO Efficiency"
-
-sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption"
-
-sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption", it is a verifiable version of sophos
-
-zhangscheme: our scheme 
+* fast: implementation of the scheme proposed in "Forward Private Searchable Symmetric Encryption with Optimized IO Efficiency"
+* sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption"
+* sophos: implementation of the scheme proposed in "Forward Secure Searchable Encryption", it is a verifiable version of sophos
+* zhangscheme: our scheme 
 
 
 # Pre-requisites
@@ -25,11 +22,12 @@ see the following documents:
 ## Getting the code
 
 ```sh
- $ git clone https://github.com/zhangzhongjun/VFSSSE.git
+$ git clone https://github.com/zhangzhongjun/VFSSSE.git
 ```
 
 # Building
 
 ```sh
- $ make
+$ cd VFSSSE/zhangscheme
+$ make
 ```

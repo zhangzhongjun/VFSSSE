@@ -5,6 +5,7 @@
  */
 #ifndef DISTSSE_CLIENT_H
 #define DISTSSE_CLIENT_H
+
 #include <grpc++/grpc++.h>
 #include "DistSSE.grpc.pb.h"
 #include "DistSSE.Util.h"
@@ -63,7 +64,7 @@ namespace DistSSE {
             for (it->SeekToFirst(); it->Valid(); it->Next()) {
                 key = it->key().ToString();
                 value = it->value().ToString();
-                std::cout << key +" "+ value << std::endl;
+                std::cout << key + " " + value << std::endl;
                 if (key[0] == 's') {
                     sc_mapper[key.substr(1, key.length() - 1)] = value;
                 } else {
@@ -101,6 +102,7 @@ namespace DistSSE {
 
             std::cout << "Bye~ " << std::endl;
         }
+
         int store(const std::string k, const std::string v) {
             rocksdb::Status s = cs_db->Delete(rocksdb::WriteOptions(), k);
             s = cs_db->Put(rocksdb::WriteOptions(), k, v);
@@ -118,7 +120,7 @@ namespace DistSSE {
         std::string get_search_time(std::string w) {
             //std::string search_time = Util::hex2str("0000000000000000000000000000000000000000000000000000000000000000");
             int ind_len = AES::BLOCKSIZE / 2; // AES::BLOCKSIZE = 16
-            byte tmp[ind_len]={0};
+            byte tmp[ind_len] = {0};
             std::string search_time = /*Util.str2hex*/(std::string((const char *) tmp, ind_len));
             std::map<std::string, std::string>::iterator it;
             it = sc_mapper.find(w);
@@ -332,7 +334,7 @@ namespace DistSSE {
 //            return "OK";
 //        }
 
-        std::string search( const std::string tw, int uc) {
+        std::string search(const std::string tw, int uc) {
             // request包含 enc_token 和 st
             SearchRequestMessage request;
             //request.set_kw(kw);
@@ -347,12 +349,12 @@ namespace DistSSE {
             SearchReply reply;
             std::unordered_set <std::string> result;
             while (reader->Read(&reply)) {
-                logger::log(logger::INFO) << reply.ind()<<std::endl;
+                logger::log(logger::INFO) << reply.ind() << std::endl;
                 counter++;
                 result.insert(Util::str2hex(reply.ind()));
             }
-            logger::log(logger::INFO) << " search result: "<< counter << std::endl;
-            logger::log(logger::INFO) << " search set result: "<< result.size() << std::endl;
+            logger::log(logger::INFO) << " search result: " << counter << std::endl;
+            logger::log(logger::INFO) << " search set result: " << result.size() << std::endl;
             return "OK";
         }
 
@@ -361,15 +363,15 @@ namespace DistSSE {
             std::string tw;
             size_t uc;
             gen_search_token(w, tw, uc);
-            std::unordered_set<std::string> result = search2(tw, uc);
+            std::unordered_set <std::string> result = search2(tw, uc);
 
             struct timeval t1, t2;
             gettimeofday(&t1, NULL);
             verify(w, result);
             gettimeofday(&t2, NULL);
             double verify_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
-            logger::log_benchmark() <<  " verify time (ms): "<< verify_time <<std::endl;
-            logger::log(logger::INFO) << " verify time (ms): "<< verify_time << std::endl;
+            logger::log_benchmark() << " verify time (ms): " << verify_time << std::endl;
+            logger::log(logger::INFO) << " verify time (ms): " << verify_time << std::endl;
             // update `sc` and `uc`
             //increase_search_time(w);
             //set_update_time(w, 0);
@@ -377,7 +379,7 @@ namespace DistSSE {
         }
 
 
-        std::unordered_set<std::string> search2( const std::string tw, int uc) {
+        std::unordered_set <std::string> search2(const std::string tw, int uc) {
             // request包含 enc_token 和 st
             SearchRequestMessage request;
             //request.set_kw(kw);
@@ -392,16 +394,16 @@ namespace DistSSE {
             SearchReply reply;
             std::unordered_set <std::string> result;
             while (reader->Read(&reply)) {
-                logger::log(logger::INFO) << reply.ind()<<std::endl;
+                logger::log(logger::INFO) << reply.ind() << std::endl;
                 counter++;
                 result.insert(Util::str2hex(reply.ind()));
             }
-            logger::log(logger::INFO) << " search result: "<< counter << std::endl;
-            logger::log(logger::INFO) << " search set result: "<< result.size() << std::endl;
+            logger::log(logger::INFO) << " search result: " << counter << std::endl;
+            logger::log(logger::INFO) << " search set result: " << result.size() << std::endl;
             return result;
         }
 
-        void verify(const std::string w, std::unordered_set <std::string> result){
+        void verify(const std::string w, std::unordered_set <std::string> result) {
             int ind_len = AES::BLOCKSIZE / 2; // AES::BLOCKSIZE = 16
             byte tmp[ind_len] = {0};
             std::string Hw = /*Util.str2hex*/(std::string((const char *) tmp, ind_len));
@@ -410,9 +412,9 @@ namespace DistSSE {
             for (std::unordered_set<std::string>::iterator i = result.begin(); i != result.end(); i++) {
                 Hw = Util::Xor(Hw, *i);
             }
-            logger::log(logger::INFO) << " H "<< Hw<< std::endl;
+            logger::log(logger::INFO) << " H " << Hw << std::endl;
             std::string proof = get_search_time(w);
-            logger::log(logger::INFO) << " proof "<< proof<< std::endl;
+            logger::log(logger::INFO) << " proof " << proof << std::endl;
         }
 
 //        Status update(UpdateRequestMessage update) {
@@ -465,7 +467,8 @@ namespace DistSSE {
             UpdateRequestMessage request;
             ClientContext context;
             ExecuteStatus exec_status;
-            std::unique_ptr <ClientWriterInterface<UpdateRequestMessage>> writer(stub_->batch_update(&context, &exec_status));
+            std::unique_ptr <ClientWriterInterface<UpdateRequestMessage>> writer(
+                    stub_->batch_update(&context, &exec_status));
             for (size_t i = 0; i < N_entries; i++) {
                 prng.GenerateBlock(tmp, sizeof(tmp));
                 std::string ind = /*Util.str2hex*/(std::string((const char *) tmp, ind_len));
@@ -474,7 +477,7 @@ namespace DistSSE {
             // now tell server we have finished
             writer->WritesDone();
             Status status = writer->Finish();
-            if(status.ok()) {
+            if (status.ok()) {
                 //set_update_time(keyword, get_update_time(keyword) + N_entries);
                 std::string log = "Random DB generation: completed: " + std::to_string(N_entries) + " keyword-filename";
                 logger::log(logger::INFO) << log << std::endl;

@@ -1,20 +1,22 @@
 # build
 
 ```bash
-make clean
-make
+$ make clean
+$ make
 ```
 
 # functions test
 
-## server
+this part is to prove the code is right and completely implement our scheme
+
+## server side
  
 ```bash
 # path of database, path of cache dadabase, number of threads, path of output log
-./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
+$ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 
-## client
+## client side
 ```bash
 # insert one keyword-filename pair
 ./rpc_client /tmp/my.cdb 1
