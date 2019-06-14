@@ -78,7 +78,7 @@ gen_update_token(){
     l = Util::H1(tw + std::to_string(uc + 1));
     e = Util::Xor(op + ind, Util::H2(tw + std::to_string(uc + 1)));
     set_update_time(w, uc + 1);
-    // 在search_time存放证据
+    // search_time is used to store the proof
     set_search_time(w, Xor(sc, ind));
 }
 
