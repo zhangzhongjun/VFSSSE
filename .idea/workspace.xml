@@ -10,52 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e03fb81-aa68-4e07-80c6-38253b673a80" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.Util.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.Util.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.client.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.db_generator.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.grpc.pb.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.grpc.pb.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.ind_merge.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.pb.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.pb.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.server.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.string_append_operator.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.string_append_operator.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/DistSSE.trace.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/benchmark" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/benchmark.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/clear.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/logger.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/logger.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/out.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/random_db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/random_db.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/reset_csdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/reset_csdb.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_client" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_client.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_server" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_server.cc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/run_dist.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/clear.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/runserver.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/search_batch.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/search_out.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/setup_batch.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/setup_out.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/update_batch.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/update_out.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/verify_batch.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/scripts/verify_out.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/thread_pool.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/upload.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RealWorldDataset/upload2.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RealWorldDataset/rpc_client" beforeDir="false" afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_client" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RealWorldDataset/rpc_client.cc" beforeDir="false" afterPath="$PROJECT_DIR$/RealWorldDataset/rpc_client.cc" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RealWorldDataset/rpc_client.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="270">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -92,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RealWorldDataset/DistSSE.client.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="70" column="71" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
+            <state relative-caret-position="225">
+              <caret line="427" column="2" selection-start-line="427" selection-start-column="2" selection-end-line="427" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -102,8 +58,8 @@
         <entry file="file://$PROJECT_DIR$/RealWorldDataset/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="180">
-                <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <first_editor relative-caret-position="450">
+                <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -276,9 +232,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1533" height="875" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4537246" visible="true" weight="0.19367854" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4537246" visible="true" weight="0.19367854" />
       <window_info id="Structure" order="1" sideWeight="0.5462754" side_tool="true" weight="0.1887324" />
       <window_info id="Favorites" order="2" sideWeight="0.5005917" side_tool="true" weight="0.24982001" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -640,16 +595,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RealWorldDataset/DistSSE.client.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="70" column="71" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
+        <state relative-caret-position="225">
+          <caret line="427" column="2" selection-start-line="427" selection-start-column="2" selection-end-line="427" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RealWorldDataset/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="180">
-            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <first_editor relative-caret-position="450">
+            <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>
@@ -657,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RealWorldDataset/rpc_client.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="270">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
         </state>
       </provider>
     </entry>

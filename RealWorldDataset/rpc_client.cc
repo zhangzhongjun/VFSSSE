@@ -6,7 +6,7 @@
 
 using DistSSE::SearchRequestMessage;
 
-void split(const std::string& s,std::vector<std::string>& sv,const char flag = ' ') {
+void split(const std::string &s, std::vector <std::string> &sv, const char flag = ' ') {
     sv.clear();
     std::istringstream iss(s);
     std::string temp;
@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 
     std::string dbPath = std::string(argv[1]);
     DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
-                         dbPath);
+                           dbPath);
 
     std::string key_value_dbPath = std::string(argv[2]);
     rocksdb::DB *ss_db;
@@ -40,18 +40,18 @@ int main(int argc, char **argv) {
         std::cerr << "open ssdb error:" << s1.ToString() << std::endl;
     }
     rocksdb::Iterator *it = ss_db->NewIterator(rocksdb::ReadOptions());
-    std::string key;
+    std::string filename;
     std::string value;
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
-        key = it->key().ToString();
+        filename = it->key().ToString();
         value = it->value().ToString();
 
-        std::vector<std::string> keywords;
+        std::vector <std::string> keywords;
         split(value, keywords, ',');
-        for (const auto& keyword : keywords) {
-            std::cout << key + " " + keyword << std::endl;
+        for (const auto &keyword : keywords) {
+            std::cout << filename + " " + keyword << std::endl;
+            client.update("1", keyword, filename);
         }
-
     }
     delete it;
 //
