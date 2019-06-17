@@ -7,8 +7,17 @@ $ make
 
 # write to databse
 
+open the server
+
 ```bash
-./rpc_client /tmp/my.cdb /tmp/filename_keyword.cdb
+# path of database, path of cache dadabase, number of threads, path of output log
+$ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
+```
+
+update the database
+
+```bash
+./rpc_client /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out
 ```
 
 # functions test

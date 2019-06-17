@@ -17,6 +17,10 @@ void split(const std::string &s, std::vector <std::string> &sv, const char flag 
     return;
 }
 
+void update(){
+
+}
+
 int main(int argc, char **argv) {
     DistSSE::logger::set_severity(DistSSE::logger::INFO);
     //DistSSE::logger::log(DistSSE::logger::INFO) << " client test :  "<< std::endl;
@@ -25,9 +29,12 @@ int main(int argc, char **argv) {
     //DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
     //                     std::string(argv[1]));
 
+    // argv[1] path of database; argv[2] path of key_value database; argv[3] path of
     std::string dbPath = std::string(argv[1]);
     DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
                            dbPath);
+
+    DistSSE::logger::set_benchmark_file(argv[3]);
 
     std::string key_value_dbPath = std::string(argv[2]);
     rocksdb::DB *ss_db;
@@ -42,7 +49,39 @@ int main(int argc, char **argv) {
     rocksdb::Iterator *it = ss_db->NewIterator(rocksdb::ReadOptions());
     std::string filename;
     std::string value;
+    int count = 0;
+
+    struct timeval t1, t2;
+    gettimeofday(&t1, NULL);
+
+
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
+        if (count == 10) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 100) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 1000) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 10000) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 100000) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+            break;
+        }
         filename = it->key().ToString();
         value = it->value().ToString();
 
@@ -52,8 +91,10 @@ int main(int argc, char **argv) {
             std::cout << filename + " " + keyword << std::endl;
             client.update("1", keyword, filename);
         }
+        count++;
     }
     delete it;
+
 //
 //
 //
