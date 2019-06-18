@@ -17,26 +17,9 @@ void split(const std::string &s, std::vector <std::string> &sv, const char flag 
     return;
 }
 
-void update(){
+void update(DistSSE::Client &client, std::string key_value_dbPath) {
 
-}
 
-int main(int argc, char **argv) {
-    DistSSE::logger::set_severity(DistSSE::logger::INFO);
-    //DistSSE::logger::log(DistSSE::logger::INFO) << " client test :  "<< std::endl;
-    //DistSSE::logger::log_benchmark() << "client to file" <<std::endl;
-    // Instantiate the client and channel isn't authenticated
-    //DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
-    //                     std::string(argv[1]));
-
-    // argv[1] path of database; argv[2] path of key_value database; argv[3] path of
-    std::string dbPath = std::string(argv[1]);
-    DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
-                           dbPath);
-
-    DistSSE::logger::set_benchmark_file(argv[3]);
-
-    std::string key_value_dbPath = std::string(argv[2]);
     rocksdb::DB *ss_db;
     rocksdb::Options options;
     options.create_if_missing = true;
@@ -94,6 +77,34 @@ int main(int argc, char **argv) {
         count++;
     }
     delete it;
+}
+
+int main(int argc, char **argv) {
+    DistSSE::logger::set_severity(DistSSE::logger::INFO);
+    //DistSSE::logger::log(DistSSE::logger::INFO) << " client test :  "<< std::endl;
+    //DistSSE::logger::log_benchmark() << "client to file" <<std::endl;
+    // Instantiate the client and channel isn't authenticated
+    //DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
+    //                     std::string(argv[1]));
+
+    // argv[1] path of database; argv[2] path of key_value database; argv[3] path of
+    std::string dbPath = std::string(argv[2]);
+    DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
+                           dbPath);
+
+    DistSSE::logger::set_benchmark_file(argv[4]);
+
+    int type = atoi(argv[1]);
+    if (type == 1) {
+        std::cout << "update..." << std::endl;
+        std::string key_value_dbPath = std::string(argv[3]);
+        update(client, key_value_dbPath);
+    } else if (type == 2) {
+        std::cout << "search..." << std::endl;
+        std::string keyword = std::string(argv[3]);
+        client.search(keyword);
+    }
+
 
 //
 //

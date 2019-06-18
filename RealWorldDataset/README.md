@@ -14,11 +14,19 @@ open the server
 $ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 
-update the database
+update
 
 ```bash
-./rpc_client /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out
+./rpc_client 1 /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out
 ```
+
+search
+
+```bash
+./rpc_client 2 /tmp/my.cdb hello benchmark_client.out
+``` 
+
+
 
 # functions test
 
