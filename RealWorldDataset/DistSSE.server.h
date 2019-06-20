@@ -459,7 +459,8 @@ namespace DistSSE {
         Status update(ServerContext *context, const UpdateRequestMessage *request, ExecuteStatus *response) {
             std::string l = request->l();
             std::string e = request->e();
-            logger::log(logger::INFO) << "server update(ServerContext *context, const UpdateRequestMessage *request, ExecuteStatus *response): "<< std::endl;
+            // to tell the user update success
+            //logger::log(logger::INFO) << "server update(ServerContext *context, const UpdateRequestMessage *request, ExecuteStatus *response): "<< std::endl;
             int status = store(ss_db, l, e);
             //assert(status == 0);
             if (status != 0) {

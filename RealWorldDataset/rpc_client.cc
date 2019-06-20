@@ -36,6 +36,7 @@ void update(DistSSE::Client &client, std::string key_value_dbPath) {
 
     struct timeval t1, t2;
     gettimeofday(&t1, NULL);
+    std::cout << "asdasd..." << std::endl;
 
 
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
@@ -71,7 +72,7 @@ void update(DistSSE::Client &client, std::string key_value_dbPath) {
         std::vector <std::string> keywords;
         split(value, keywords, ',');
         for (const auto &keyword : keywords) {
-            std::cout << filename + " " + keyword << std::endl;
+            //std::cout << filename + " " + keyword << std::endl;
             client.update("1", keyword, filename);
         }
         count++;
