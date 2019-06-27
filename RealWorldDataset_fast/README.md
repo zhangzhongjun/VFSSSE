@@ -1,11 +1,14 @@
 # functions test
 
 ## server
+
 ```bash
 # path of database, path of cache dadabase, number of threads, path of output log
 ./rpc_server /tmp/fast.sdb /tmp/fast.scadb 1 benchmark_server.out
 ```
+
 ## client
+
 ```bash
 # insert one keyword-filename pair
 ./rpc_client /tmp/fast.cdb 1

@@ -39,7 +39,9 @@ $ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 # path of database, path of cache dadabase, number of threads, path of output log
 ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
+
 ## Update
+
 ```bash
 # path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 10 keyword_10e1 2 1 benchmark_client_10e1.update.out
@@ -48,7 +50,9 @@ $ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ./rpc_client /tmp/my.cdb 10000 keyword_10e4 2 1 benchmark_client_10e4.update.out
 ./rpc_client /tmp/my.cdb 100000 keyword_10e5 2 1 benchmark_client_10e5.update.out
 ```
+
 ## Search
+
 ```bash
 # path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 4 keyword_10e1 3 1 benchmark_client_10e1.search.out
@@ -59,6 +63,7 @@ $ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 
 ## Verify
+
 ```bash
 # path of database, number of entries, keyword, flag, number of threads, path of logfile
 ./rpc_client /tmp/my.cdb 10 keyword_10e1 4 1 benchmark_client_10e1.verify.out

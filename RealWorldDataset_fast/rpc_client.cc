@@ -80,8 +80,6 @@ void update(DistSSE::Client &client, std::string key_value_dbPath) {
 
 int main(int argc, char **argv) {
     DistSSE::logger::set_severity(DistSSE::logger::INFO);
-    //DistSSE::logger::log(DistSSE::logger::INFO) << " client test :  "<< std::endl;
-    //DistSSE::logger::log_benchmark() << "client to file" <<std::endl;
     // Instantiate the client and channel isn't authenticated
     DistSSE::Client client(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()),
                            std::string(argv[1]));
