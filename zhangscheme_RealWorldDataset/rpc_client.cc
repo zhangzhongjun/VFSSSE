@@ -37,33 +37,39 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
 
 
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
-        if (count == 10) {
+        if (count == 32768) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
             DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
-        if (count == 100) {
+        if (count == 65536) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
             DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
-        if (count == 1000) {
+        if (count == 131072) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
             DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
-        if (count == 10000) {
+        if (count == 262144) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
             DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
-        if (count == 100000) {
+        if (count == 524288) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
             DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 1048576) {
+                    gettimeofday(&t2, NULL);
+                    double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+                    DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
 
         if(count>maxNum){
+            delete it;
             // end the process of evaluation
             break;
         }
@@ -79,7 +85,6 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
         }
         count++;
     }
-    delete it;
 }
 
 int main(int argc, char **argv) {

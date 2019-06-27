@@ -20,7 +20,7 @@ update
 
 ```bash
 # path of database, path of sources dadabase, path of log file, number of keyword-document pairs
-./rpc_client 1 /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out 100
+./rpc_client 1 /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out 32769
 ```
 
 search

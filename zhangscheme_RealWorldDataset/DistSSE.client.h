@@ -216,11 +216,9 @@ namespace DistSSE {
                 std::string sc = get_search_time(w);
                 tw = gen_enc_token(w);
                 l = Util::H1(tw + std::to_string(uc + 1));
-                //l = Util::H1(tw + std::to_string(uc + 1));
                 e = Util::Xor(op + ind, l);
                 msg.set_l(l);
                 msg.set_e(e);
-                //msg.set_counter(0);
                 set_update_time(w, uc + 1); // TODO
                 set_search_time(w, Util::Xor(sc, ind));
                 return msg;
