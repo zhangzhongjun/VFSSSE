@@ -30,5 +30,6 @@ namespace sse {
         void gen_db_with_trace(SophosClientRunner& client, size_t N_entries);
         void eval_trace(SophosClientRunner& client, size_t thread_num);
         void gen_db_2(SophosClientRunner& client, std::string keyword, size_t N_entries);
+        void evaluateUsingRealWorld(SophosClientRunner& client, std::string sourceDBPath, int maxNum);
    }
 }

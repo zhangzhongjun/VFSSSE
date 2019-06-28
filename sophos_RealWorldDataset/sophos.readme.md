@@ -23,7 +23,7 @@ sh ./scripts/clear.sh
 
 服务器端
 ```bash
-./server -b 14e5.ssdb
+./server -b sophos.ssdb
 ```
 
 客户端
@@ -48,6 +48,11 @@ sh ./scripts/clear.sh
 ./client -b 14e5.csdb -u keyword_10e3 -c 1000
 ./client -b 14e5.csdb -u keyword_10e4 -c 10000
 ./client -b 14e5.csdb -u keyword_10e5 -c 100000
+```
+
+```bash
+# use the enwiki dataset to update the database
+./client -b sophos.csdb -x /tmp/filename_keywords.db -m 100 -v benchmark_client.out
 ```
 
 ```bash

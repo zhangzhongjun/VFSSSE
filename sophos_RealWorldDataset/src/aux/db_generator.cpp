@@ -30,6 +30,7 @@
 #include <vector>
 #include <iostream>
 #include <chrono>
+#include <sstream>
 
 namespace sse {
     namespace sophos {
@@ -246,7 +247,7 @@ namespace sse {
             logger::log_benchmark() <<"update time: "<<((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec -t1.tv_usec) /1000.0<<" ms" <<std::endl;
             //DistSSE::logger::log_benchmark() << "client to file" <<std::endl;
 
-	}
+	    }
 
 
         static void generation_job_2(SophosClientRunner* client, std::string keyword, unsigned int thread_id, size_t N_entries,crypto::Fpe *rnd_perm)
@@ -303,6 +304,96 @@ namespace sse {
             logger::log_benchmark() <<"update time: "<<((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec -t1.tv_usec) /1000.0<<" ms" <<std::endl;
 
         }
+
+void split(const std::string &s, std::vector <std::string> &sv, const char flag = ' ') {
+    sv.clear();
+    std::istringstream iss(s);
+    std::string temp;
+
+    while (std::getline(iss, temp, flag)) {
+        sv.push_back(temp);
+    }
+    return;
+}
+
+void update(SophosClientRunner* client, std::string key_value_dbPath, int maxNum) {
+    rocksdb::DB *ss_db;
+    rocksdb::Options options;
+    options.create_if_missing = true;
+    options.use_fsync = true;
+    rocksdb::Status s1 = rocksdb::DB::Open(options, key_value_dbPath, &ss_db);
+    if (!s1.ok()) {
+        std::cerr << "open ssdb error:" << s1.ToString() << std::endl;
+    }
+    rocksdb::Iterator *it = ss_db->NewIterator(rocksdb::ReadOptions());
+    std::string filename;
+    std::string value;
+    int count = 0;
+
+
+    struct timeval t1, t2;
+    gettimeofday(&t1, NULL);
+
+
+    for (it->SeekToFirst(); it->Valid(); it->Next()) {
+        if(count>maxNum){
+            // now tell server we have finished
+            delete it;
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+            // end the process of evaluation
+            break;
+        }
+        if (count == 32768) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 65536) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 131072) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 262144) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 524288) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+        if (count == 1048576) {
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+        }
+
+
+        filename = it->key().ToString();
+        value = it->value().ToString();
+        //uint32_t temp = atoi();
+        std::vector <std::string> keywords;
+        split(value, keywords, ',');
+        for (const auto &keyword : keywords) {
+            client->update(keyword, 1);
+        }
+        count++;
+    }
+}
+
+        void evaluateUsingRealWorld(SophosClientRunner& client,  std::string sourceDBPath, int maxNum){
+            update(&client, sourceDBPath, maxNum);
+            logger::log_benchmark() <<"evaluate using realword dataset" <<std::endl;
+        }
+
 
 
     static void generation_with_trace_job(SophosClientRunner* client, unsigned int thread_id, size_t N_entries, size_t step, std::mutex* db_mutex, crypto::Fpe *rnd_perm, std::atomic_size_t *entries_counter)
@@ -566,6 +657,7 @@ namespace sse {
                     }
                 }
         }
+
 
     }//namespace sophos
 }

@@ -39,10 +39,13 @@ int main(int argc, char** argv) {
     uint32_t rnd_entries_count = 0;
 
     std::string updatekw ;
+    std::string sourceDBPath;
+    int maxNum = 0;
+    bool realworld = false;
     bool updateaword = false;
     uint32_t updatetw_num = 0;
     
-    while ((c = getopt (argc, argv, "l:b:o:i:t:dpr:f:u:c:v:")) != -1)
+    while ((c = getopt (argc, argv, "l:b:o:i:t:dpr:f:u:c:v:x:m:")) != -1)
         switch (c)
     {
         case 'l':
@@ -77,8 +80,15 @@ int main(int argc, char** argv) {
             break;
         case 'u':
             updatekw = std::string(optarg);
-            updateaword = true ;
+            updateaword = true;
             //sse::logger::log(sse::logger::INFO) << updatekw << std::endl;
+            break;
+        case 'x':
+            sourceDBPath = std::string(optarg);
+            realworld = true;
+            break;
+        case 'm':
+            maxNum = atoi(optarg);
             break;
         case 'c':
             updatetw_num = atoi(optarg);
@@ -190,7 +200,12 @@ int main(int argc, char** argv) {
         // client_runner->trace_evaluation(thread_num);
         eval_trace(*client_runner, thread_num);
     }
-    if(updateaword){
+
+    if(realworld){
+        // use the realworld dataset
+        evaluateUsingRealWorld(*client_runner,sourceDBPath, maxNum);
+    }else if(updateaword){
+        // use the synthetic dataset
         gen_db_2(*client_runner, updatekw, updatetw_num);
     }
 
