@@ -54,6 +54,19 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
 
 
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
+
+        if(count>maxNum){
+            // now tell server we have finished
+            writer->WritesDone();
+            Status status = writer->Finish();
+            delete it;
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+            // end the process of evaluation
+            break;
+        }
+
         if (count == 32768) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
@@ -85,14 +98,6 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
                     DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
 
-        if(count>maxNum){
-            // now tell server we have finished
-            writer->WritesDone();
-            Status status = writer->Finish();
-            delete it;
-            // end the process of evaluation
-            break;
-        }
 
         filename = it->key().ToString();
         value = it->value().ToString();

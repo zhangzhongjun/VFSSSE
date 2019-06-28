@@ -70,7 +70,7 @@ namespace DistSSE {
             for (it->SeekToFirst(); it->Valid(); it->Next()) {
                 key = it->key().ToString();
                 value = it->value().ToString();
-                std::cout << key +" "+ value << std::endl;
+                //std::cout << key +" "+ value << std::endl;
                 if (key[0] == 's') {
                     sc_mapper[key.substr(1, key.length() - 1)] = std::stoi(value);
                 } else {
@@ -235,23 +235,6 @@ namespace DistSSE {
             }
         }
 
-                        std::string enc_token;
-                        UpdateRequestMessage msg;
-                        std::string kw, tw, l, e;
-                        // get update time of `w` for `node`
-                        size_t uc;
-                        uc = get_update_time(w);
-                        std::string sc = get_search_time(w);
-                        tw = gen_enc_token(w);
-                        l = Util::H1(tw + std::to_string(uc + 1));
-                        e = Util::Xor(op + ind, l);
-                        msg.set_l(l);
-                        msg.set_e(e);
-                        //msg.set_counter(0);
-                        set_update_time(w, uc + 1); // TODO
-                        set_search_time(w, Util::Xor(sc, ind));
-                        return msg;
-
         UpdateRequestMessage gen_update_request(std::string op, std::string w, std::string ind, int counter) {
             try {
                 std::string enc_token;
@@ -262,7 +245,10 @@ namespace DistSSE {
                 size_t sc, uc;
                 uc = get_update_time(w);
                 sc = get_search_time(w);
+                //simulate F
                 tw = gen_enc_token(w);
+                //simulate P
+                gen_enc_token(w);
                 l = Util::H1(tw + std::to_string(uc + 1));
                 std::string ttt = Util::H2(tw + std::to_string(uc + 1));
                 e = Util::Xor(op + ind, ttt);
@@ -289,12 +275,14 @@ namespace DistSSE {
                 uc = get_update_time(w);
                 sc = get_search_time(w);
                 tw = gen_enc_token(w);
+                //simulate P
+                gen_enc_token(w);
                 l = Util::H1(tw + std::to_string(uc + 1));
                 e = Util::Xor(op + ind, Util::H2(tw + std::to_string(uc + 1)));
                 msg.set_l(l);
                 msg.set_e(e);
                 msg.set_counter(0);
-                set_update_time(w, uc + 1); // TODO
+                set_update_time(w, uc + 1);
                 return msg;
             }
             catch (const CryptoPP::Exception &e) {
@@ -303,20 +291,6 @@ namespace DistSSE {
             }
         }
 
-//        // only used for simulation ...
-//        CacheRequestMessage gen_cache_request(std::string keyword, std::string inds) {
-//            try {
-//                CacheRequestMessage msg;
-//                std::string tw = gen_enc_token(keyword + "|" + std::to_string(-1));
-//                msg.set_tw(tw);
-//                msg.set_inds(inds);
-//                return msg;
-//            }
-//            catch (const CryptoPP::Exception &e) {
-//                std::cerr << "in gen_cache_request() " << e.what() << std::endl;
-//                exit(1);
-//            }
-//        }
 
         void gen_search_token(std::string w, std::string &kw, std::string &tw, size_t &uc) {
             try {

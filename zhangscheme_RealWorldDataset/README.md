@@ -13,14 +13,14 @@ open the server
 
 ```bash
 # path of database, path of cache dadabase, number of threads, path of output log
-$ ./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
+./rpc_server /tmp/my.sdb /tmp/my.scadb 1 benchmark_server.out
 ```
 
 update
 
 ```bash
 # path of database, path of sources dadabase, path of log file, number of keyword-document pairs
-./rpc_client 1 /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out 32769
+./rpc_client 1 /tmp/my.cdb /tmp/filename_keywords.db benchmark_client.out 1048577
 ```
 
 search

@@ -25,28 +25,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/README.md">
+        <entry file="file://$PROJECT_DIR$/sophos_RealWorldDataset/server_main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-            </state>
+            <state relative-caret-position="-680" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/DistSSE.client.h">
+        <entry file="file://$PROJECT_DIR$/sophos_RealWorldDataset/sophos.readme.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="251" column="49" selection-start-line="251" selection-start-column="49" selection-end-line="251" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/DistSSE.client.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="220" column="29" selection-start-line="220" selection-start-column="29" selection-end-line="220" selection-end-column="29" />
+            <state relative-caret-position="375">
+              <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -55,9 +44,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rnd_entries_count</find>
-      <find>Xor</find>
-      <find>byte tmp[ind_len];</find>
       <find>Util</find>
       <find>get_sear</find>
       <find>verify</find>
@@ -72,19 +58,22 @@
       <find>(ms)</find>
       <find>client update</find>
       <find>server up</find>
-      <find>gen_enc_token</find>
       <find>fa</find>
-      <find>cout</find>
       <find>search2</find>
       <find>asd</find>
       <find>search</find>
-      <find>generation_job_2</find>
       <find>UpdateRequestMessage</find>
       <find>generation_job</find>
       <find>-&gt;</find>
       <find>delete</find>
       <find>keywords</find>
+      <find>generation_job_2</find>
+      <find>gen_db_2</find>
+      <find>gen_enc_token</find>
       <find>gen_update_request</find>
+      <find>update</find>
+      <find>in update</find>
+      <find>cout</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/sophos</dir>
@@ -98,8 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zhangscheme/scripts/runserver.sh" />
-        <option value="$PROJECT_DIR$/zhangscheme/scripts/verify_batch.sh" />
         <option value="$PROJECT_DIR$/zhangscheme/DistSSE.Util.h" />
         <option value="$PROJECT_DIR$/sophos_verify/random_db.cc" />
         <option value="$PROJECT_DIR$/sophos_verify/Makefile" />
@@ -142,13 +129,15 @@
         <option value="$PROJECT_DIR$/sophos/README.md" />
         <option value="$PROJECT_DIR$/sophos/sophos.readme.md" />
         <option value="$PROJECT_DIR$/sophos/scripts/clear.sh" />
+        <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/benchmark_client.out" />
+        <option value="$PROJECT_DIR$/fast_RealWorldDataset/README.md" />
+        <option value="$PROJECT_DIR$/fast/DistSSE.client.h" />
+        <option value="$PROJECT_DIR$/fast_RealWorldDataset/rpc_client.cc" />
+        <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/DistSSE.client.h" />
         <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/rpc_client.cc" />
         <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/README.md" />
-        <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/benchmark_client.out" />
-        <option value="$PROJECT_DIR$/fast_RealWorldDataset/rpc_client.cc" />
-        <option value="$PROJECT_DIR$/fast_RealWorldDataset/README.md" />
+        <option value="$PROJECT_DIR$/fast_RealWorldDataset/DistSSE.server.h" />
         <option value="$PROJECT_DIR$/fast_RealWorldDataset/DistSSE.client.h" />
-        <option value="$PROJECT_DIR$/zhangscheme_RealWorldDataset/DistSSE.client.h" />
       </list>
     </option>
   </component>
@@ -161,9 +150,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="500" />
-    <option name="y" value="40" />
-    <option name="width" value="1099" />
+    <option name="x" value="331" />
+    <option name="y" value="30" />
+    <option name="width" value="1267" />
     <option name="height" value="854" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -181,6 +170,11 @@
             <path>
               <item name="VFSSSE" type="b2602c69:ProjectViewProjectNode" />
               <item name="VFSSSE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="VFSSSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VFSSSE" type="462c0819:PsiDirectoryNode" />
+              <item name="sophos_RealWorldDataset" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,10 +224,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="500" y="40" width="1099" height="854" extended-state="0" />
+    <frame x="331" y="30" width="1267" height="854" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4537246" visible="true" weight="0.19052045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4537246" visible="true" weight="0.164791" />
       <window_info id="Structure" order="1" sideWeight="0.5462754" side_tool="true" weight="0.1887324" />
       <window_info id="Favorites" order="2" sideWeight="0.5005917" side_tool="true" weight="0.24982001" />
       <window_info id="Designer" order="3" />
@@ -255,36 +249,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/scripts/runserver.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/scripts/search_batch.sh">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_fast/reset_csdb.cc" />
-    <entry file="file://$PROJECT_DIR$/zhangscheme_fast/out.sh" />
-    <entry file="file://$PROJECT_DIR$/zhangscheme_fast/nohup.out" />
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/DistSSE.proto">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/scripts/update_batch.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/DistSSE.db_generator.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhangscheme_simple/DistSSE.pb.cc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -399,13 +363,6 @@
     <entry file="file://$PROJECT_DIR$/sophos/script_bench/bench_1e5.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/rpc_client.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sophos/sophos.readme.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -460,65 +417,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sophos_RealWorldDataset/sophos.readme.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/rpc_client.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="39" selection-start-line="39" selection-end-line="68" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/benchmark_server.out">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/benchmark_client.out">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/README.md">
+    <entry file="file://$PROJECT_DIR$/sophos_verify/main.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="-1349" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast/rpc_client.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="50" column="25" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/rpc_client.cc">
+    <entry file="file://$PROJECT_DIR$/fast/DistSSE.db_generator.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="105" column="51" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="51" />
+        <state relative-caret-position="220">
+          <caret line="252" column="32" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast/DistSSE.client.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos_verify/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-839" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme_simple/rpc_client.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/rpc_server.cc">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/DistSSE.client.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+            <element signature="e#0#17423#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/benchmark_client.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/DistSSE.client.h">
+    <entry file="file://$PROJECT_DIR$/zhangscheme_RealWorldDataset/rpc_client.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="220" column="29" selection-start-line="220" selection-start-column="29" selection-end-line="220" selection-end-column="29" />
+        <state relative-caret-position="375">
+          <caret line="91" column="28" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/DistSSE.server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="491" column="47" selection-start-line="491" selection-start-column="38" selection-end-line="491" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/DistSSE.client.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="251" column="49" selection-start-line="251" selection-start-column="49" selection-end-line="251" selection-end-column="49" />
+        <state relative-caret-position="213">
+          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/benchmark_client.out">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fast_RealWorldDataset/rpc_client.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="114" column="1" lean-forward="true" selection-start-line="114" selection-start-column="1" selection-end-line="114" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos_RealWorldDataset/server_main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sophos_RealWorldDataset/sophos.readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
         </state>
       </provider>
     </entry>

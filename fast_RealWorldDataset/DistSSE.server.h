@@ -489,7 +489,7 @@ namespace DistSSE {
             while (reader->Read(&request)) {
                 l = request.l();
                 e = request.e();
-                std::cout<<"server: in update(): "<<Util::str2hex(l)<<std::endl;
+                //std::cout<<"server: in update(): "<<Util::str2hex(l)<<std::endl;
                 store(ss_db, l, e);
                 // assert(status == 0);
             }

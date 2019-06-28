@@ -4,6 +4,16 @@
 #include "logger.h"
 #include <vector>
 
+#include "DistSSE.Util.h"
+#include <cmath>
+#include <chrono>
+
+
+using DistSSE::SearchRequestMessage;
+using DistSSE::UpdateRequestMessage;
+using DistSSE::ExecuteStatus;
+using DistSSE::RPC;
+
 using DistSSE::SearchRequestMessage;
 
 void split(const std::string &s, std::vector <std::string> &sv, const char flag = ' ') {
@@ -32,11 +42,28 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
     std::string value;
     int count = 0;
 
+    // for gRPC
+    UpdateRequestMessage request;
+    ClientContext context;
+    ExecuteStatus exec_status;
+    std::unique_ptr <RPC::Stub> stub_(RPC::NewStub(grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials())));
+    std::unique_ptr <ClientWriterInterface<UpdateRequestMessage>> writer(stub_->batch_update(&context, &exec_status));
+
+
     struct timeval t1, t2;
     gettimeofday(&t1, NULL);
 
 
     for (it->SeekToFirst(); it->Valid(); it->Next()) {
+        if(count>maxNum){
+            // now tell server we have finished
+            delete it;
+            gettimeofday(&t2, NULL);
+            double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
+            DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
+            // end the process of evaluation
+            break;
+        }
         if (count == 32768) {
             gettimeofday(&t2, NULL);
             double update_time = ((t2.tv_sec - t1.tv_sec) * 1000000.0 + t2.tv_usec - t1.tv_usec) / 1000.0;
@@ -68,11 +95,6 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
                     DistSSE::logger::log_benchmark() << "update(ms): " << count << " " << update_time << std::endl;
         }
 
-        if(count>maxNum){
-            delete it;
-            // end the process of evaluation
-            break;
-        }
 
         filename = it->key().ToString();
         value = it->value().ToString();
@@ -81,7 +103,8 @@ void update(DistSSE::Client &client, std::string key_value_dbPath, int maxNum) {
         split(value, keywords, ',');
         for (const auto &keyword : keywords) {
             //std::cout << filename + " " + keyword << std::endl;
-            client.update("1", keyword, filename);
+            //client.update("1", keyword, filename);
+            writer->Write(client.gen_update_request("1", keyword, filename));
         }
         count++;
     }

@@ -28,17 +28,6 @@ using namespace CryptoPP;
 byte k_s[17] = "0123456789abcdef";
 byte iv_s[17] = "0123456789abcdef";
 
-
-/*
-// 用来生成加密 label
-byte k_l[17] = "abcdef1234567890";
-byte iv_l[17] = "0123456789abcdef";
-
-// 用来生成搜索 token
-byte k_st[17] = "123456789abcdef0";
-byte iv_st[17] = "0abcdef123456789";
-*/
-
 extern int max_keyword_length;
 extern int max_nodes_number;
 

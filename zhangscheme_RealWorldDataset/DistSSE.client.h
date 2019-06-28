@@ -335,15 +335,7 @@ namespace DistSSE {
             logger::log(logger::INFO) << " proof " << proof << std::endl;
         }
 
-//        Status update(UpdateRequestMessage update) {
-//            ClientContext context;
-//            ExecuteStatus exec_status;
-//            // 执行RPC
-//            Status status = stub_->update(&context, update, &exec_status);
-//            // if(status.ok()) increase_update_time(w);
-//            return status;
-//        }
-//
+
         Status update(std::string op, std::string w, std::string ind) {
             //logger::log(logger::INFO) << "client update(op, w, ind):  " << std::endl;
             ClientContext context;
