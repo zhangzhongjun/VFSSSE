@@ -23,28 +23,32 @@ update
 ./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 32769
 ```
 
+
 search
 
 ```bash
-# flag, path of database, keyword
-./rpc_client 2 /tmp/fast.cdb hello
+# generate the database firstly
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 32770
+// there are no parameter indicates the path of log file
+// the log of search process can be found in benchmark_server.out
+./rpc_client 2 /tmp/fast.cdb 000
+
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 65550
+./rpc_client 2 /tmp/fast.cdb 000
+
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 131090
+./rpc_client 2 /tmp/fast.cdb 000
+
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 262170
+./rpc_client 2 /tmp/fast.cdb 000
+
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 524290
+./rpc_client 2 /tmp/fast.cdb 000
+
+./rpc_client 1 /tmp/fast.cdb /tmp/filename_keywords.db benchmark_client.out 1048576
+./rpc_client 2 /tmp/fast.cdb 000
 ```
 
-# core code
-
-```cplusplus
-gen_update_token(){
-    uc = get_update_time(w);
-    tw = gen_enc_token(w);
-    l = H1(tw+(uc+1));
-    e = XOR((op+ind),H2(tw+(uc+1)))
-}
-gen_search_token(){
-    uc = get_update_time(w);
-    tw = gen_enc_token(w);
-    kw = gen_enc_token(tw+uc);
-}
-```
 
 # use scripts
 ## Update
